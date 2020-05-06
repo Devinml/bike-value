@@ -23,18 +23,31 @@ for i in range(1, MAX_PAGE_NUM + 1):
     #print(titles[0])
     #elems = driver.find_elements_by_xpath("//a[@href]")
        
-    for i in range(20):
+    for i in range(4):#range(20):
         elems = driver.find_elements_by_xpath("(//b[contains(.,'[Read More]')])")
         elems[i].click()
-        sleep(1)
+        location = driver.find_element_by_css_selector('.hbox-c3-m > div:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(3) > td:nth-child(2)')
+        condition = driver.find_element_by_css_selector('.hbox-c3-m > div:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(7) > td:nth-child(2)')
+        frame_material = driver.find_element_by_css_selector('.hbox-c3-m > div:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(8) > td:nth-child(2)')
+        frame_size = driver.find_element_by_css_selector('.hbox-c3-m > div:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(9) > td:nth-child(2)')
+        wheel_size = driver.find_element_by_css_selector('.hbox-c3-m > div:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(10) > td:nth-child(2)')
+        front_travel = driver.find_element_by_css_selector('.hbox-c3-m > div:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(11) > td:nth-child(2)')
+        rear_travel = driver.find_element_by_css_selector('.hbox-c3-m > div:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(12) > td:nth-child(2)')
+        price  = driver.find_element_by_css_selector('.hbox-c3-m > div:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(13) > td:nth-child(2)')
+        description = driver.find_element_by_css_selector('.hbox-c3-m > div:nth-child(1) > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(1)')
+
+        
+        print(frame_material.text)
+        print(condition.text.strip())
+        print(frame_size.text)
+        print(wheel_size.text)
+        print(front_travel.text)
+        print(rear_travel.text)        
+        print(price.text)
+        print(description.text)
         driver.back()
 
-        '''
-        link = elem.get_attribute('href')
-        window_before = driver.window_handles[0]
-        driver.execute_script("window.open(arguments[0])",link)
-        window_after = driver.window_handles[1]
-        driver.switch_to.window(window_after)'''
+       
 
 
 
