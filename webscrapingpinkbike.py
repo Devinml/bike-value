@@ -3,6 +3,11 @@ from selenium.webdriver.support.ui import WebDriverWait
 from time import sleep
 import csv
 
+def remove_commas(string):
+    exclude = ','
+    return ''.join(ch for ch in string if ch not in exclude)
+print('hello,there ,,, !')
+
 MAX_PAGE_NUM = 1
 
 driver = webdriver.Firefox()
@@ -26,16 +31,18 @@ for i in range(1, MAX_PAGE_NUM + 1):
     for i in range(4):#range(20):
         elems = driver.find_elements_by_xpath("(//b[contains(.,'[Read More]')])")
         elems[i].click()
-        location = driver.find_element_by_css_selector('.hbox-c3-m > div:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(3) > td:nth-child(2)')
-        condition = driver.find_element_by_css_selector('.hbox-c3-m > div:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(7) > td:nth-child(2)')
-        frame_material = driver.find_element_by_css_selector('.hbox-c3-m > div:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(8) > td:nth-child(2)')
-        frame_size = driver.find_element_by_css_selector('.hbox-c3-m > div:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(9) > td:nth-child(2)')
-        wheel_size = driver.find_element_by_css_selector('.hbox-c3-m > div:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(10) > td:nth-child(2)')
-        front_travel = driver.find_element_by_css_selector('.hbox-c3-m > div:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(11) > td:nth-child(2)')
-        rear_travel = driver.find_element_by_css_selector('.hbox-c3-m > div:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(12) > td:nth-child(2)')
-        price  = driver.find_element_by_css_selector('.hbox-c3-m > div:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(13) > td:nth-child(2)')
-        description = driver.find_element_by_css_selector('.hbox-c3-m > div:nth-child(1) > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(1)')
-
+        try:
+            location = driver.find_element_by_css_selector('.hbox-c3-m > div:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(3) > td:nth-child(2)')
+            condition = driver.find_element_by_css_selector('.hbox-c3-m > div:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(7) > td:nth-child(2)')
+            frame_material = driver.find_element_by_css_selector('.hbox-c3-m > div:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(8) > td:nth-child(2)')
+            frame_size = driver.find_element_by_css_selector('.hbox-c3-m > div:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(9) > td:nth-child(2)')
+            wheel_size = driver.find_element_by_css_selector('.hbox-c3-m > div:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(10) > td:nth-child(2)')
+            front_travel = driver.find_element_by_css_selector('.hbox-c3-m > div:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(11) > td:nth-child(2)')
+            rear_travel = driver.find_element_by_css_selector('.hbox-c3-m > div:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(12) > td:nth-child(2)')
+            price  = driver.find_element_by_css_selector('.hbox-c3-m > div:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(13) > td:nth-child(2)')
+            description = driver.find_element_by_css_selector('.hbox-c3-m > div:nth-child(1) > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(1)')
+        except :
+            continue
         
         print(frame_material.text)
         print(condition.text.strip())
