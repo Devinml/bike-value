@@ -4,6 +4,8 @@ from time import sleep
 import csv
 import string
 
+
+
 def remove_punc(string_):
     exclude = set(string.punctuation)
     s =  ''.join(ch for ch in string_ if ch not in exclude)
@@ -13,9 +15,10 @@ def remove_new_line(input_string):
     return input_string.replace('\n','')
 
 
-MAX_PAGE_NUM = 2
+MAX_PAGE_NUM = 406
+profile = webdriver.FirefoxProfile('/home/devin/Scripts/Bike Value Analysis/firefoxprofile')
 
-driver = webdriver.Firefox()
+driver = webdriver.Firefox(firefox_profile=profile)
 
 
 #with open('results.csv', 'w') as f:
@@ -47,11 +50,10 @@ for i in range(1, MAX_PAGE_NUM + 1):
         '.hbox-c3-m > div:nth-child(1) > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(1)'  # Description 
     ]
 
-    for i in range(20):#range(20):
+    for i in range(2):#range(20):
+        
         elems = driver.find_elements_by_xpath("(//b[contains(.,'[Read More]')])")
         elems[i].click()
-        
-        sleep(2)
         bike_data = ''
         for key, selector in enumerate(css_sel_list):
             try:
@@ -71,12 +73,12 @@ for i in range(1, MAX_PAGE_NUM + 1):
        
         bike_data.rstrip()
         
-        print(remove_new_line(bike_data))
-        f.write(remove_new_line(bike_data))
-        f.write('\n')
+        if len(bike_data)>1:
+            f.write(remove_new_line(bike_data))
+            f.write('\n')
         print("-------------------------------------------------------")
         bike_data = ''
-        sleep(2)
+        
         
        
         
