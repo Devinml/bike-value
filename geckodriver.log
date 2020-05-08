@@ -4627,3 +4627,32 @@ JavaScript warning: moz-extension://cb3e19fa-a6bf-4b9d-aa1b-77fd81217198/lib/adb
 1588880743543	Marionette	INFO	Stopped listening on port 45537
 JavaScript error: resource://gre/modules/ConduitsChild.jsm, line 108: Error: sendRemoveListener on closed conduit jid1-NIfFY2CA8fy1tg@jetpack.274877906947
 1588880795657	Marionette	INFO	Stopped listening on port 43959
+1588880885839	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileM8f3Ns"
+JavaScript error: moz-extension://cb3e19fa-a6bf-4b9d-aa1b-77fd81217198/include.preload.js, line 944: Error: Could not establish connection. Receiving end does not exist.
+JavaScript error: moz-extension://cb3e19fa-a6bf-4b9d-aa1b-77fd81217198/include.preload.js, line 2236: Error: Could not establish connection. Receiving end does not exist.
+JavaScript error: moz-extension://cb3e19fa-a6bf-4b9d-aa1b-77fd81217198/include.postload.js, line 765: Error: Could not establish connection. Receiving end does not exist.
+1588880887112	Marionette	INFO	Listening on port 39485
+1588880887146	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: moz-extension://cb3e19fa-a6bf-4b9d-aa1b-77fd81217198/lib/adblockplus.js, line 0: Successfully compiled asm.js code (total compilation time 1ms)
+A content process crashed and MOZ_CRASHREPORTER_SHUTDOWN is set, shutting down
+JavaScript error: resource://gre/modules/ConduitsChild.jsm, line 108: Error: sendRemoveListener on closed conduit jid1-NIfFY2CA8fy1tg@jetpack.274877906947
+1588881739423	Marionette	INFO	Stopped listening on port 39485
+1588882089605	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileiUsQ4U"
+JavaScript error: moz-extension://cb3e19fa-a6bf-4b9d-aa1b-77fd81217198/include.preload.js, line 944: Error: Could not establish connection. Receiving end does not exist.
+JavaScript error: moz-extension://cb3e19fa-a6bf-4b9d-aa1b-77fd81217198/include.preload.js, line 2236: Error: Could not establish connection. Receiving end does not exist.
+JavaScript error: moz-extension://cb3e19fa-a6bf-4b9d-aa1b-77fd81217198/include.postload.js, line 765: Error: Could not establish connection. Receiving end does not exist.
+1588882091056	Marionette	INFO	Listening on port 43335
+1588882091111	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: moz-extension://cb3e19fa-a6bf-4b9d-aa1b-77fd81217198/lib/adblockplus.js, line 0: Successfully compiled asm.js code (total compilation time 2ms)
+1588887123880	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:245:13
+TimedPromise@chrome://marionette/content/sync.js:230:10
+interaction.flushEventLoop@chrome://marionette/content/interaction.js:416:10
+webdriverClickElement@chrome://marionette/content/interaction.js:182:31
+1588888245788	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:245:13
+TimedPromise@chrome://marionette/content/sync.js:230:10
+interaction.flushEventLoop@chrome://marionette/content/interaction.js:416:10
+webdriverClickElement@chrome://marionette/content/interaction.js:182:31
+1588893736768	Marionette	INFO	Stopped listening on port 43335
+JavaScript error: resource://gre/modules/ConduitsChild.jsm, line 108: Error: sendRemoveListener on closed conduit jid1-NIfFY2CA8fy1tg@jetpack.274877906947
