@@ -21,22 +21,18 @@ profile = webdriver.FirefoxProfile('/home/devin/Scripts/Bike Value Analysis/fire
 driver = webdriver.Firefox(firefox_profile=profile)
 
 
-#with open('results.csv', 'w') as f:
-    #f.write("Title,Location,Condition,Material,Frame Size,Wheel Size,Front Travel,Rear Travel,Price,City,State/Prov,Country\n")
 f = open('results.csv','w')
 f.write("Title,Condition,Material,Frame Size,Wheel Size,Front Travel,Rear Travel,Price,City,State/Prov,Country,Description,Date Posted\n")
-#with open('results.csv', 'a+') as f:
+
 for i in range(1, MAX_PAGE_NUM + 1):
      
     url = f"https://www.pinkbike.com/buysell/list/?region=3&page={i}&category=2"
-    #print(url)
+    
     
     driver.get(url)
     
     titles = driver.find_elements_by_xpath('//div[@class="bsitem"]')#
-    #read_more_link = driver.find_element_by_css_selector()
-    #print(titles[0])
-    #elems = driver.find_elements_by_xpath("//a[@href]")
+
     css_sel_list = [
         '.hboxr-c3-h > h1:nth-child(1)', # title
         '.hbox-c3-m > div:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(7) > td:nth-child(2)', # condition
@@ -53,7 +49,7 @@ for i in range(1, MAX_PAGE_NUM + 1):
     ]
     if i %10 == 0:
         sleep(60)
-    for i in range(20):#range(20):
+    for i in range(20):
         
         elems = driver.find_elements_by_xpath("(//b[contains(.,'[Read More]')])")
         elems[i].click()
@@ -83,13 +79,6 @@ for i in range(1, MAX_PAGE_NUM + 1):
             f.write('\n')
         print("-------------------------------------------------------")
         bike_data = ''
-        
-        
-       
-        
         driver.back()
-
-   
-        
 f.close()
 driver.close()
